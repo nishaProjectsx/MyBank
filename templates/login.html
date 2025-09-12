@@ -1,0 +1,46 @@
+{% extends 'common.html' %}
+{% block content %}
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-8 col-lg-7 col-xl-6">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Phone image">
+      </div>
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+          <!-- account number input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="numner" id="form1Example13" class="form-control form-control-lg" name="accno" />
+            <label class="form-label" for="form1Example13">enter your account number</label>
+          </div>
+
+          <!-- pin input -->
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="number" id="form1Example23" class="form-control form-control-lg" name="pin" />
+            <label class="form-label" for="form1Example23">enter your pin number</label>
+          </div>
+
+         
+          <!-- Submit button -->
+          <a href="{% url 'service' %}"><button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg btn-block">Log in</button></a>
+
+          <div style="color: red;">{{error}}</div>
+
+          <div class="divider d-flex align-items-center my-4">
+            <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+          </div>
+
+          <a data-mdb-ripple-init class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998" href="{% url 'create' %}"
+            role="button">
+            <i class="fab fa-facebook-f me-2"></i>Register Your New Account
+          </a>
+          
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

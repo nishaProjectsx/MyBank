@@ -1,0 +1,58 @@
+{% extends 'common.html' %}
+{% block content %}
+
+    
+    
+    <form  action="{% url 'checkBalance' %}"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+         
+        
+        <section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100" style="margin-top: 3rem;position: relative; ">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="/static/cp.png" style="border-radius: 50px; width: 250rem;height: 31rem;padding-top: 70px;border-top-right-radius: 50px;"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="margin-left: 2px; position: absolute;">
+          <div data-mdb-input-init class="form-outline mb-4" style="width: 10rem;" >
+            <label class="form-label" for="form3Example3" style="color: #0b3d9b;">ACCOUNT NO :</label>
+            <input type="number" id="form3Example3" name="accno" class="form-control form-control-lg"
+              placeholder="Enter" style="background:transparent; border-color:#6b9cf7;" />
+            
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="margin-left: 2px; position: absolute;">
+          <div data-mdb-input-init class="form-outline mb-4" style="width: 10rem;" >
+            <label class="form-label" for="form3Example3" style="color: #0b3d9b;">PIN NO:</label>
+            <input type="number" id="form3Example3" name="pin" class="form-control form-control-lg"
+              placeholder="Enter" style="background:transparent; border-color:#6b9cf7;" />
+            
+          </div>
+
+          
+          
+
+         
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <a href="{% url 'checkBalance' %}"><button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;" >Done</button></a>
+            
+          </div>
+
+      
+      </div>
+    </div>
+  </div>
+
+    <!-- Copyright -->
+
+    <!-- Right -->
+   
+    <!-- Right -->
+  </div>
+</section>
+  </form>
+
+
+{% endblock content %}

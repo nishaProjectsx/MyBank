@@ -1,0 +1,80 @@
+{% extends 'common.html' %}
+{% block content %}
+
+
+<form>
+  
+ {% if msg %}
+             <div class="alert alert-success" role="alert" style="width: 50%; height: 50px; font-size: 25px; margin-left: 30%; justify-content: center; display: flex; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-weight:lighter;"> {{ msg }}</div>
+{% endif %}
+
+<!-- Service 1 - Bootstrap Brain Component -->
+<section class="py-5 py-xl-8">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <h1 class="mb-4 display-5 text-center">Services</h1>
+        
+        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+      </div>
+    </div>
+  </div>
+
+  <div class="container overflow-hidden">
+    <div class="row gy-5">
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="{% url 'deposit' %}" style="text-decoration: none; color: black;"><div class="text-center px-xl-2">
+          <img src="/static/deposit-in.png"  style="width: 100px; height: 100px;"  class="rounded mx-auto d-block" alt="...">
+          
+          <h5 class="m-2">Deposit Money</h5>
+          <p class="m-0 text-secondary"></p>
+        </div></a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="{% url 'withdraw' %}" style="text-decoration: none; color: black;"><div class="text-center px-xl-2">
+          <img src="/static/withdrawal2.jpg"  style="width: 100px; height: 100px;"  class="rounded mx-auto d-block" alt="...">
+          <h5 class="m-2">Withdrawal Money</h5>
+          <p class="m-0 text-secondary"></p>
+        </div></a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="{% url 'transfer' %}" style="text-decoration: none; color: black;"><div class="text-center px-xl-2">
+        <div class="text-center px-xl-2">
+          <img src="/static/transe.jpg"  style="width: 100px; height: 100px;"  class="rounded mx-auto d-block" alt="...">
+          <h5 class="m-2">Transfer Money</h5>
+          <p class="m-0 text-secondary"></p>
+        </div></a>
+      </div>
+      
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="{% url 'checkBalance' %}" style="text-decoration: none; color: black;"><div class="text-center px-xl-2">
+
+        <div class="text-center px-xl-2">
+          <img src="/static/check3.png"  style="width: 100px; height: 100px;"  class="rounded mx-auto d-block" alt="...">
+          <h5 class="m-2">Balance Check</h5>
+          <p class="m-0 text-secondary"></p></a>
+        </div>
+      </div></div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="{% url 'ministatement' %}" style="text-decoration: none; color: black;">
+        <div class="text-center px-xl-2">
+         <img src="/static/statement.webp"  style="width: 100px; height: 100px;"  class="rounded mx-auto d-block" alt="...">
+          <h5 class="m-2">Mini Statement</h5>-
+          <p class="m-0 text-secondary"></p></a>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-4">
+        <a href="{% url 'password' %}" style="text-decoration: none; color: black;">
+        <div class="text-center px-xl-2">
+          <img src="/static/password1.png"  style="width: 100px; height: 100px;"  class="rounded mx-auto d-block" alt="...">
+          <h5 class="m-2">Change Password</h5>
+          <p class="m-0 text-secondary"></p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>     
+</form>
+    
+{% endblock content %}

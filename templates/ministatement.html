@@ -1,0 +1,33 @@
+{% extends 'common.html' %}
+{% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Account No.</th>
+      <th scope="col">Credit</th>
+      <th scope="col">Debit</th>
+      <th scope="col">Total amouunt</th>
+      <th scope="col">Ref_No</th>
+      <th scope="col">Date</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in mform %}
+    <tr class="table-info">
+      
+      <td>{{x.accno}}</td>
+      <td>{{x.credit}}</td>
+      <td>{{x.debit}}</td>
+      <td>{{x.total_amount}}</td>
+      <td>{{x.ref_no}}</td>
+      <td>{{x.date}}</td>
+
+
+    </tr>
+    {% endfor %}
+      
+  </tbody>
+</table>
+{% endblock content %}

@@ -1,0 +1,14 @@
+# Ignore virtual environment
+.evbank/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database files
+*.sqlite3
+
+# VS Code settings
+.vscode/

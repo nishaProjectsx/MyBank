@@ -1,90 +1,75 @@
 {% extends 'common.html' %}
 {% block content %}
 
-<form action="" method="post" enctype="multipart/form-data" >
+<form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <section class="h-100 bg-dark">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col">
-        <div class="card card-registration my-4">
-          <div class="row g-0">
-            <div class="col-xl-6 d-none d-xl-block">
-              <img src="/static/save.jpg"
-                alt="Sample photo" class="img-fluid"
-                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem; width: 50rem; height: 55rem; " />
+    <section class="h-100" style="background: linear-gradient(to right, #f0f4f8, #d9e2ec);">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-10">
+                    <div class="card shadow-lg" style="border-radius: 20px; overflow: hidden;">
+                        <div class="row g-0">
+                            
+                            <!-- Image Side -->
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="/static/save.jpg" 
+                                     alt="Sample photo" 
+                                     class="img-fluid"
+                                     style="width:100%; height:100%; object-fit:cover; transition: transform 0.5s;"
+                                     onmouseover="this.style.transform='scale(1.05)';"
+                                     onmouseout="this.style.transform='scale(1)';"
+                                />
+                            </div>
+                            
+                            <!-- Form Side -->
+                            <div class="col-xl-6">
+                                <div class="card-body p-5 text-dark">
+                                    <h3 class="mb-5 text-center text-uppercase" style="letter-spacing: 1px; font-weight:700;">
+                                        Registration Form
+                                    </h3>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <input type="text" name="fname" class="form-control form-control-lg rounded-pill shadow-sm" placeholder="First Name" />
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <input type="text" name="laname" class="form-control form-control-lg rounded-pill shadow-sm" placeholder="Last Name" />
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4">
+                                            <input type="number" name="age" class="form-control form-control-lg rounded-pill shadow-sm" placeholder="Age" />
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <input type="number" name="contact" class="form-control form-control-lg rounded-pill shadow-sm" placeholder="Contact" />
+                                        </div>
+                                    </div>
+
+                                    <input type="number" name="adhar" class="form-control form-control-lg mb-4 rounded-pill shadow-sm" placeholder="Aadhar" />
+                                    <input type="date" name="dob" class="form-control form-control-lg mb-4 rounded-pill shadow-sm" />
+                                    <input type="password" name="password" class="form-control form-control-lg mb-4 rounded-pill shadow-sm" placeholder="Password" />
+                                    <input type="number" name="balance" class="form-control form-control-lg mb-4 rounded-pill shadow-sm" placeholder="Balance" />
+
+                                    <div class="d-flex justify-content-end pt-3">
+                                        <button type="reset" class="btn btn-outline-secondary btn-lg me-2 shadow-sm" style="border-radius:50px;">Reset</button>
+                                        <button type="submit" name="sub" class="btn btn-primary btn-lg shadow-sm" 
+                                                style="border-radius:50px; background: linear-gradient(135deg, #007bff, #00c6ff); border:none; transition: transform 0.3s;"
+                                                onmouseover="this.style.transform='scale(1.05)';"
+                                                onmouseout="this.style.transform='scale(1)';">
+                                            Submit
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="col-xl-6">
-              <div class="card-body p-md-5 text-black">
-                <h3 class="mb-5 text-uppercase">registration form</h3>
-
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="form3Example1m" name="fname" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m">First name</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
-                    <div data-mdb-input-init class="form-outline">
-                      <input type="text" id="form3Example1n" name="laname" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n">Last name</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div data-mdb-input-init class="form-outline">
-                      <input type="number" id="form3Example1m1" name="age" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m1">age</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-4">
-                    <div data-mdb-input-init class="form-outline">
-                      <input type="number" id="form3Example1n1"  name="contact"   class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n1">contact</label>
-                    </div>
-                  </div>
-                </div>
-
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="number" id="form3Example8" name="adhar" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example8">Adhar</label>
-                </div>
-
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="date" id="form3Example9" name="dob" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example9">DOB</label>
-                </div>
-
-                 <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="password" id="form3Example90" name="password" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example90">Password</label>
-                </div>
-
-
-                <div data-mdb-input-init class="form-outline mb-4">
-                  <input type="number" id="form3Example90" name="balance" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example90">Balance</label>
-                </div>
-
-                <div class="d-flex justify-content-end pt-3">
-                  <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg">Reset all</button>
-                  <button  type="submit" nam="sub" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg ms-2">Submit form</button>
-                </div>
-                 
-
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 </form>
 
-    
 {% endblock content %}

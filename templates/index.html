@@ -1,4 +1,37 @@
 {% extends 'common.html' %}
 {% block content %}
-<h5>wellcome!!</h5>
+<style>
+.bg-image {
+  background-image: url('/static/bnk.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 95vh;
+
+  /* Transition effect */
+  opacity: 0;
+  transform: translateY(30px);   /* neeche se aayega */
+  animation: slideFade 1.5s ease-out forwards;
+}
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);   /* normal position */
+  }
+}
+</style>
+
+<div class="bg-image"></div>
+
+
+        <div style="background-image: url('/static/bnk.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;">
+</div>
+
+
+
 {% endblock content %}
